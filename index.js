@@ -3,19 +3,9 @@ const mongoose=require('mongoose')
 const {ApolloServer} =require('apollo-server')
 const {MONGODB} =require('./config')
 
-const typeDefs=gql`
-    type Constructor {
-        id: ID!,
-        firstName: String!,
-        lastName: String!,
-        phoneNumber: Int!,
-        email: String!
-    }
-    type Query {
-        getConstructors:Constructor
-    }
-`
-const resolvers= ()=>{console.log("hello world")}
+const typeDefs = require('./graphql/typeDefs')
+const resolvers = require('./graphql/resolvers')
+
 const PORT = process.env.PORT || 5000
 const server = new ApolloServer({typeDefs, resolvers, context:({req})=>({req})})
 
