@@ -28,7 +28,7 @@ The GraphQL server contains Query and Mutations for fetching and storing results
 | TYPE | NAME | ARGUMENTS | RETURN TYPE | DESCRIPTION | 
 | QUERY | getContractors | - | [id, firstName, lastName, email, phoneNumber, image] | This query returns the array of all contractors in database |
 | QUERY | getContractor | id (Type ID) | id, firstName, lastName, email, phoneNumber, image | This query searches for contractor by idand returns the information for that contractor |
-| Mutation | insertContractor | ContractorInput(firstName, lastName, email, phoneNumber), file (Type upload) | id, firstName, lastName, email, phoneNumber, image | This mutation lets you insert contractor in database |
+| Mutation | insertContractor | ContractorInput(firstName, lastName, email, phoneNumber), file (Type upload) | id, firstName, lastName, email, phoneNumber, image | This mutation lets you insert contractor in database. Also email is used as unique key to determine uniqueness of contractors. You cannot add two contractors with same email |
 | Mutation | uploadFile | file (Type upload) | id, fileName, mimetype, path | This mutation lets you add file to nodeJS server and store details in database. |
 
 Access the GRAPHQL server on http://localhost:4000/graphql
