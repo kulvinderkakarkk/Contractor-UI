@@ -55,6 +55,12 @@ module.exports= {
     Upload: GraphQLUpload,
     Mutation: {
         insertContractor: async(_, {contractorInput:{firstName, lastName, phoneNumber, email},file })=> {
+            const any_contractor = await Contractor.findOne({email:email})
+            if(any_contractor) {
+                throw new UserInputError("Errors",{
+                    "general": "Contractor already exist"
+                })
+            }
             mkdir("images", { recursive: true }, (err) => {
                 if (err) throw err;
               });
