@@ -1,16 +1,16 @@
-const gql = require('graphql-tag')
-
-module.exports= gql`
-    scalar Upload
+const { gql } = require('apollo-server');
+module.exports= gql`  
     type Contractor {
-        id: ID!,
-        firstName: String!,
-        lastName: String!,
-        phoneNumber: String!,
-        email: String!,  
-    }
-    type File {
         id: ID!
+        firstName: String!
+        lastName: String!
+        phoneNumber: String!
+        email: String!  
+        image: String!
+    }
+    scalar Upload
+    type File {
+        id:ID!
         filename: String!
         mimetype: String!
         path: String!
@@ -24,10 +24,10 @@ module.exports= gql`
         firstName: String!,
         lastName: String!,
         phoneNumber: String!,
-        email: String!,
-        image: Upload
+        email: String!
     }
     type Mutation {
-        insertContractor(contractorInput: ContractorInput, file:Upload): Contractor!
+        insertContractor(contractorInput: ContractorInput, file: Upload!): Contractor!
+        uploadFile(file: Upload!): File!
     }
 `
