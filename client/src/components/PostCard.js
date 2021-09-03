@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import {Card, Form, Button, Message } from 'semantic-ui-react'
+import {Card, Form, Button } from 'semantic-ui-react'
 import {Validation} from '../util/validation'
 import gql from 'graphql-tag'
 import {useMutation} from '@apollo/react-hooks'
@@ -12,7 +12,6 @@ function PostCard(props) {
         image:null
     })
     const [selectedFile, setSelectedFile] = useState(null);
-    let [errors,setErrors]=useState({})
     const [addContractor]= useMutation(INSERT_CONTRACTOR, {
         update(proxy, {data:{addContractor:userData}}) {
             window.location.reload(false)
@@ -82,12 +81,6 @@ function PostCard(props) {
         <Button type='submit'>Submit</Button>
         
       </Form>
-      
-      {Object.keys(errors).length >0 && (<Message 
-       warning
-       header='Could you check something!'
-       list={[Object.values(errors)[0] ]}
-     />)  }
     </Card>
     )
 }
