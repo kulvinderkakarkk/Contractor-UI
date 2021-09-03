@@ -5,9 +5,6 @@ const ContractorSchema = new Schema({
     lastName:String,
     phoneNumber: String,
     email: String,
-    file: {
-        type: Schema.Types.ObjectId,
-        ref:'contractor'
-    }
+    image: String
 })
 module.exports=model('Contractor',ContractorSchema, 'contractor')

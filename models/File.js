@@ -1,5 +1,4 @@
 const {model, Schema} = require('mongoose')
-
 const FileSchema = new Schema({
   filename: String,
   mimetype: String,
