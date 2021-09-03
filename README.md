@@ -2,6 +2,7 @@
 This application lets you add contractor information and see the contractor information in two views- List and Tiles view. 
 
 | Application | Technologies used| 
+| --- | --- |
 | Front End   | ReactJS |
 | Back End | NodeJS + GraphQL (MONGO) |
 
@@ -26,6 +27,7 @@ Access the website on http://localhost:5000/
 The GraphQL server contains Query and Mutations for fetching and storing results in mongoose database.
 
 | TYPE | NAME | ARGUMENTS | RETURN TYPE | DESCRIPTION | 
+| --- | --- | --- | --- | --- | 
 | QUERY | getContractors | - | [id, firstName, lastName, email, phoneNumber, image] | This query returns the array of all contractors in database |
 | QUERY | getContractor | id (Type ID) | id, firstName, lastName, email, phoneNumber, image | This query searches for contractor by idand returns the information for that contractor |
 | Mutation | insertContractor | ContractorInput(firstName, lastName, email, phoneNumber), file (Type upload) | id, firstName, lastName, email, phoneNumber, image | This mutation lets you insert contractor in database. Also email is used as unique key to determine uniqueness of contractors. You cannot add two contractors with same email |
