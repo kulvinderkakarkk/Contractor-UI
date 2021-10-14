@@ -1,5 +1,5 @@
 # Contractor-UI
-This application lets you add contractor information and see the contractor information in two views- List and Tiles view. 
+This application lets you add contractor information and see the contractor information in two views- List and Tiles view. Through this repository you learn to use latest hooks along with file upload feature in github).
 
 | Application | Technologies used| 
 | --- | --- |
